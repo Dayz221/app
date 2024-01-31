@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import './app.css'
+import classNames from "classnames";
 
 const App = () => {
   const [days, setDays] = useState(0)
@@ -7,12 +8,13 @@ const App = () => {
   const [minutes, setMinutes] = useState(0)
   const [seconds, setSeconds] = useState(0)
   const deadline = new Date(2024, 1, 7, 0, 0, 0, 0).getTime()
+  const [isCritical, setIsCritical] = useState(false)
 
   useEffect(() => {
     setInterval(() => {
       const date = new Date()
       const delta = deadline - date.getTime()
-      console.log(delta)
+
       if (delta >= 0) {
         const a = Math.floor(delta / (1000*60*60*24))
         const a_ = delta % (1000*60*60*24)
@@ -26,12 +28,14 @@ const App = () => {
         setHours(b)
         setMinutes(c)
         setSeconds(d)
+
+        setIsCritical(delta < 1000*60*60*24)
       }
     }, 100)
   }, [])
 
   return (
-    <div className="app">
+    <div className={classNames("app", {critical: isCritical})}>
       <h1 className="title">
         До сдачи пояснительных записок осталось:
       </h1>
