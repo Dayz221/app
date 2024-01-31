@@ -9,7 +9,9 @@ const App = () => {
   function setMem() {
     if (!memMode) {
       if (window.confirm("Вы учитель?)))) (ок - да, отмена - нет)")) return
-      if (!window.confirm("Тооооооочно?)))) (ок - да, отмена - нет)")) return
+      if (!window.confirm("Тооооооочно? (ок - да, отмена - нет)")) return
+      if (!window.confirm("Проверим?? (ок - да, отмена - нет)")) return
+      if (!(window.prompt('Запиши корень уравнения: lg(4ч+10) - lg(x+3) = 2lg4 - lg8') == "-2")) return
       if (window.confirm("*Разработчик не несет ответственности за содержание данного режима, просим детей, пожилых и беременных отойти от экрана...")) {
         setMemMode(prev => !prev)
       }
