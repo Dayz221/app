@@ -52,8 +52,8 @@ const Timer = ({deadline, title}) => {
                 {String(days).padStart(2, '0')}:
                 {String(hours).padStart(2, '0')}:
                 {String(minutes).padStart(2, '0')}:
-                {String(seconds).padStart(2, '0')}.
-                <span style={{color: "rgba(255, 255, 255, .4)"}}>{String(millis).padStart(3, '0')}</span>
+                {String(seconds).padStart(2, '0')}
+                <span style={{color: "rgba(255, 255, 255, .4)"}}>.{String(millis).padStart(3, '0')}</span>
             </h2>
         </div>
     )
