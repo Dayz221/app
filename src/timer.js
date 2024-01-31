@@ -6,6 +6,7 @@ const Timer = ({deadline, title}) => {
     const [hours, setHours] = useState(0)
     const [minutes, setMinutes] = useState(0)
     const [seconds, setSeconds] = useState(0)
+    const [millis, setMillis] = useState(0)
     const [isCritical, setIsCritical] = useState(false)
 
     useEffect(() => {
@@ -21,11 +22,13 @@ const Timer = ({deadline, title}) => {
             const c = Math.floor(b_ / (1000*60))
             const c_ = b_ % (1000*60)
             const d = Math.floor(c_ / 1000)
+            const d_ = c_ % 1000
 
             setDays(a)
             setHours(b)
             setMinutes(c)
             setSeconds(d)
+            setMillis(d_)
 
             setIsCritical(delta < 1000*60*60*24)
         } else {
@@ -33,10 +36,11 @@ const Timer = ({deadline, title}) => {
             setHours(0)
             setMinutes(0)
             setSeconds(0)
+            setMillis(0)
 
             setIsCritical(delta < 1000*60*60*24)
         }
-        }, 100)
+        }, 10)
     }, [])
     
     return (
@@ -48,7 +52,8 @@ const Timer = ({deadline, title}) => {
                 {String(days).padStart(2, '0')}:
                 {String(hours).padStart(2, '0')}:
                 {String(minutes).padStart(2, '0')}:
-                {String(seconds).padStart(2, '0')}
+                {String(seconds).padStart(2, '0')}.
+                {String(millis).padStart(3, '0')}
             </h2>
         </div>
     )
