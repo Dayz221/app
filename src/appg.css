@@ -90,3 +90,11 @@ body {
     background-color: rgba(149, 104, 255, .6);
     color: white;
 }
+
+.afterDot {
+    color: rgba(255, 255, 255, .4);
+}
+
+.timer.critical .afterDot {
+    color: rgba(255, 50, 50, .3)
+}
