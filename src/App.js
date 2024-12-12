@@ -23,12 +23,13 @@ const App = () => {
   return (
     <div className="app">
       <div className="title2">Часы судного дня</div>
-      <Timer title={!memMode ? "ПЗ сдаем на регионе:" : "До пиз***ей от Алексеича (Палыча) за ПЗ:"} deadline={new Date(2024, 1, 20, 0, 0, 0, 0).getTime()} />
+      {/* <Timer title={!memMode ? "ПЗ сдаем на регионе:" : "До пиз***ей от Алексеича (Палыча) за ПЗ:"} deadline={new Date(2024, 1, 20, 0, 0, 0, 0).getTime()} />
       <Timer title={!memMode ? "До начала региона осталось:" : "До пиз***ей от Алексеича (Палыча) перед регионом:"}deadline={new Date(2024, 1, 20, 0, 0, 0, 0).getTime()} />
-      <Timer title={!memMode ? "До конца региона осталось:" : "До пиз***ей от Алексеича (Палыча) после региона:"}deadline={new Date(2024, 1, 22, 0, 0, 0, 0).getTime()} />
-      <div className="memBlock">
+      <Timer title={!memMode ? "До конца региона осталось:" : "До пиз***ей от Алексеича (Палыча) после региона:"}deadline={new Date(2024, 1, 22, 0, 0, 0, 0).getTime()} /> */}
+      <Timer title={!memMode ? "До отчисления по ПТП осталось:" : "До пиз***ей от Алексеича (Палыча) после региона:"}deadline={new Date(2024, 11, 12, 22, 0, 0, 0).getTime()} />
+      {/* <div className="memBlock">
         <button type="button" className={classNames('memButton', {active: memMode})} onClick={() => setMem()}>Реальное отображение*</button>
-      </div>
+      </div> */}
     </div>
   )
 }
